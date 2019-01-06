@@ -77,6 +77,7 @@
     				<img src="img/pp0.jpeg" alt="" id="vv">
     				<div id="slider"></div>
     			</div>
+                
     			<div class="hanguo">
     				<h4>韩国RE:CIPE 水晶清爽防水防晒喷雾SPF50 150ml/瓶</h4>
     				<p>【限购3件】 超透明无痕防晒，防水防汗定妆，保湿降温不粘腻。水晶防晒喷雾，喷后皮肤水润，不油，不留白，更不会像防晒霜那样抹不开，非常实用，开始存货吧。</p>
@@ -106,9 +107,9 @@
     				<img src="img/sp1.jpeg" alt="" id="img3">
     				<img src="img/spanr.jpg" alt="" style="position: absolute;right:0;" id="img4">
     			</div>
-    			<div id="fangfang" style="border:1px #d0cdc7 solid;position: absolute;top:57px;left: 430px;">
-		            <img src="img/pp0.jpeg" alt="" id="iao">
-	            </div>
+                <div id="fangfang" style="border:1px #d0cdc7 solid;position: absolute;top:57px;left: 430px;">
+                    <img src="img/pp0.jpeg" alt="" id="iao">
+                </div>
     		</div>
     		<img src="img/ww_07.jpg" alt="" id="iao">
     	</div>
@@ -304,26 +305,29 @@
     		fangfang.style.display="none";
     	}
 
-    // 	baibai.onmousemove=function(ev){
-    //     var ev=ev||event;
+    	baibai.onmousemove=function(ev){
+           var ev=ev||event;
+           slider.style.display="block";
+           fangfang.style.display="block"
           
-    //     var oL=ev.clientX-zi.offsetLeft-slider.offsetWidth/2;
-    //     var oT=ev.clientY-zi.offsetTop-slider.offsetHeight/2;
-          
-    //     var oMaxw=baibai.offsetWidth-slider.offsetWidth;
-    //     var oMaxh=baibai.offsetHeight-slider.offsetHeight;
-          
-    //     oL=oL>oMaxw?oMaxw:oL<0?0:oL;
-    //     oT=oT>oMaxh?oMaxh:oT<0?0:oT;
+        var oL=ev.clientX-zi.offsetLeft-slider.offsetWidth/2;
+        var oT=ev.clientY-zi.offsetTop-slider.offsetHeight/2;
         
-    //     slider.style.left = oL+'px';
-    //     slider.style.top = oT+'px' ;
+          
+        var oMaxw=410-150;
+        var oMaxh=410-50;
+        oL=oL>oMaxw?oMaxw:oL<0?0:oL;
+
+        oT=oT>oMaxh?oMaxh:oT<0?0:oT;
         
-    //     var oBmaxw = fangfang.offsetWidth - iao.offsetWidth; 
-    //     var oBmaxh = fangfang.offsetHeight - iao.offsetHeight; 
-    //     iao.style.left = ( oL/oMaxw ) * oBmaxw + 'px'
-    //     iao.style.top = ( oT/oMaxh ) * oBmaxh + 'px'
-    // }
+        slider.style.left = oL-20+'px';
+        slider.style.top = oT+40+'px' ;
+        
+        var oBmaxw = -390;
+        var oBmaxh = -390; 
+        iao.style.left = ( oL/oMaxw ) * oBmaxw + 'px';
+        iao.style.top = ( oT/oMaxh ) * oBmaxh + 'px';
+    }
 
 
 
